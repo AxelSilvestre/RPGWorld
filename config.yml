@@ -1,0 +1,70 @@
+xpRate: 1
+maxLevel: 20
+xpForLevel:
+  1: 15
+  2: 40
+  3: 100
+  4: 230
+  5: 500
+  6: 1050
+  7: 2160
+  8: 4390
+  9: 8860
+  10: 17810
+  11: 35720
+  12: 71550
+  13: 143220
+  14: 286570
+  15: 573280
+  16: 1146710
+  17: 2293580
+  18: 4587330
+  19: 9174840
+  20: 18349870
+mobXP:
+  #Passive
+  Bat: 0
+  Chicken: 0
+  Cow: 0
+  Mooshroom: 0
+  Pig: 0
+  Rabbit: 0
+  Sheep: 0
+  Squid: 0
+  Villager: 0
+  #Neutral
+  Cave Spider: 1
+  Enderman: 1
+  Spider: 1
+  Zombie Pigman: 1
+  #Hostile
+  Blaze: 1
+  Chicken Jockey: 1
+  Creeper: 1
+  Elder Guardian: 1
+  Endermite: 1
+  Ghast: 1
+  Guardian: 1
+  Magma Cube: 1
+  Silverfish: 1
+  Skeleton: 1
+  Skeleton Horseman: 1
+  Slime: 1
+  Spider Jockey: 1
+  Witch: 1
+  Wither Skeleton: 1
+  Zombie: 1
+  Zombie Villager: 1
+  Giant: 0
+  #Tamable
+  Donkey: 0
+  Horse: 0
+  Mule: 0
+  Ocelot: 0
+  Skeleton Horse: 0
+  Wolf: 0
+  #Boss
+  Ender Dragon: 2
+  Wither: 2
+ 
+ 

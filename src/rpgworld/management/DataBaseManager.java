@@ -36,14 +36,14 @@ public class DataBaseManager {
 		dataBase.set(path+"guild", "");
 		dataBase.set(path+"class", "");
 		dataBase.set(path+"skin", "");
-		dataBase.set(path+"level", 50);
+		dataBase.set(path+"level", 1);
 		dataBase.set(path+"xp", 0);
 		save();
 		return new RPGPlayer(name);
 	}
 	
 	public boolean playerExists(String name){
-		return dataBase.contains(name);
+		return dataBase.contains("Players." + name);
 	}
 	
 	public RPGPlayer loadPlayer(String name){

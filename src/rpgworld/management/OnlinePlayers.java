@@ -24,6 +24,10 @@ public class OnlinePlayers {
 		players.put(player.getName(), player);
 	}
 	
+	public void removePlayer(String name){
+		players.remove(name);
+	}
+	
 	public RPGPlayer getPlayer(String name){
 		return players.get(name);
 	}

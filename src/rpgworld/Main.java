@@ -8,7 +8,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import rpgworld.game.running.RPGPlayer;
 import rpgworld.management.CommandManager;
-import rpgworld.management.ConfigManager;
 import rpgworld.management.DataBaseManager;
 import rpgworld.management.EventManager;
 import rpgworld.management.OnlinePlayers;
@@ -17,17 +16,16 @@ public class Main extends JavaPlugin{
 	
 	private static EventManager eventManager;
 	private static CommandManager commandManager;
-	private static ConfigManager configManager;
 	private static OnlinePlayers players;
 	private static DataBaseManager data;
 	
 	@Override
 	public void onEnable() {
 		players = OnlinePlayers.getInstance();
-		data = DataBaseManager.getInstance();	
-		configManager = ConfigManager.getInstance();
+		data = DataBaseManager.getInstance();
+		
 		eventManager = EventManager.getInstance();
-		getServer().getPluginManager().registerEvents(eventManager, this);
+		eventManager.startListening(this);
 		commandManager = CommandManager.getInstance();
 		super.onEnable();
 	}

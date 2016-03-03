@@ -2,19 +2,20 @@ package rpgworld.management;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class CommandManager {
 	
-	private OnlinePlayers players;
-	private DataBaseManager data;
-	private ConfigManager config;
+//	private OnlinePlayers players;
+//	private DataBaseManager data;
+//	private ConfigManager config;
 	
 	private static CommandManager INSTANCE;
 	
 	private CommandManager(){
-		players = OnlinePlayers.getInstance();
-		data = DataBaseManager.getInstance();
-		config = ConfigManager.getInstance();
+//		players = OnlinePlayers.getInstance();
+//		data = DataBaseManager.getInstance();
+//		config = ConfigManager.getInstance();
 	}
 	
 	public static CommandManager getInstance(){
@@ -24,6 +25,10 @@ public class CommandManager {
 	}
 	
 	public boolean proceedCommand(CommandSender sender, Command command, String label, String[] args){
+		if(sender instanceof Player){
+			return true;
+		}
+		
 		return false;
 	}
 

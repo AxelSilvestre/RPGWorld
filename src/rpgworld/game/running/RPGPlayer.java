@@ -1,18 +1,19 @@
 package rpgworld.game.running;
 
+
 import rpgworld.game.classes.RPGClass;
 
 public class RPGPlayer {
 	
 	private final String name;
-	private int xp;
+	private float xp;
 	private RPGClass rpgClass;
 	private Skin skin;
 	private int level;
 	private String guild;
 	
 	
-	public RPGPlayer(String name, int level,  int xp, RPGClass rpgClass, Skin skin, String guild) {
+	public RPGPlayer(String name, int level,  float xp, RPGClass rpgClass, Skin skin, String guild) {
 		this.name = name;
 		this.xp = xp;
 		this.rpgClass = rpgClass;
@@ -37,15 +38,19 @@ public class RPGPlayer {
 		return name;
 	}
 
-	public void addXP(int amount){
+	public void addXP(float amount){
 		xp += amount;
 	}
 	
-	public void removeXP(int amount){
+	public void removeXP(float amount){
 		xp -= amount;
 	}
 	
-	public int getXP() {
+	public void setXp(float xp) {
+		this.xp = xp;
+	}
+	
+	public float getXP() {
 		return xp;
 	}
 	
@@ -65,12 +70,8 @@ public class RPGPlayer {
 		this.skin = skin;
 	}
 	
-	public void addLevel(int amount){
-		level += amount;
-	}
-	
-	public void removeLevel(int amount){
-		level -= amount;
+	public void setLevel(int level) {
+		this.level = level;
 	}
 	
 	public int getLevel() {
