@@ -1,0 +1,5 @@
+name: RPGWorld
+author: Sedara
+version: 1.0
+main: rpgworld.Main
+commands:

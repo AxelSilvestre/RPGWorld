@@ -1,0 +1,7 @@
+Players:
+  default:
+    guild: ''
+    level: 1
+    xp: 0
+    class: ''
+    skin: ''
