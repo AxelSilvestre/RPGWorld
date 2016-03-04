@@ -6,26 +6,34 @@ import java.util.Map;
 
 import rpgworld.game.running.RPGPlayer;
 
-public class OnlinePlayers {
+public final class OnlinePlayers {
 
 	private static Map<String, RPGPlayer> players;
 	
-	private static final OnlinePlayers INSTANCE = new OnlinePlayers();
+	private static OnlinePlayers INSTANCE;
 	
 	private OnlinePlayers(){
 		players = new HashMap<String, RPGPlayer>();
 	}
 	
 	public static OnlinePlayers getInstance(){
+		if(INSTANCE == null) 
+			INSTANCE = new OnlinePlayers();
 		return INSTANCE;
 	}
 	
-	public void addPlayer(RPGPlayer player){
-		players.put(player.getName(), player);
+	public boolean exists(String name){
+		return players.containsKey(name);
 	}
 	
-	public void removePlayer(String name){
-		players.remove(name);
+	public boolean addPlayer(RPGPlayer player){
+		if(exists(player.getName())) return false;
+		players.put(player.getName(), player);
+		return true;
+	}
+	
+	public boolean removePlayer(String name){
+		return players.remove(name) != null;
 	}
 	
 	public RPGPlayer getPlayer(String name){

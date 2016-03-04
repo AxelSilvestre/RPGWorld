@@ -48,22 +48,20 @@ public class EventManager implements Listener {
 	private void onJoin(PlayerJoinEvent e){
 		String name = e.getPlayer().getName();
 		Player player = e.getPlayer();
-		RPGPlayer rpgPlayer = null;
 		if(data.playerExists(name)){
-			rpgPlayer = data.loadPlayer(name);
+			data.loadPlayers(name);
 		}else{
-			rpgPlayer = data.registerPlayer(name);
+			data.registerPlayers(name);
 			player.setExp(0);
 			player.setLevel(1);
 		}
-		players.addPlayer(rpgPlayer);
 	}
 	
 	@EventHandler
 	private void onLeave(PlayerQuitEvent e){
 		String name = e.getPlayer().getName();
 		RPGPlayer player = players.getPlayer(name);
-		data.updatePlayer(player);
+		data.updatePlayers(player);
 		players.removePlayer(name);
 	}
 	
@@ -72,7 +70,7 @@ public class EventManager implements Listener {
 		LivingEntity entity = e.getEntity();
 		LivingEntity killer = entity.getKiller();
 		
-		if(killer instanceof Player){
+		if(killer instanceof Player && !(entity instanceof Player)){
 			float mobXp = config.getMobXP(entity.getName()) * config.getXPRate();
 			
 			RPGPlayer player = players.getPlayer(killer.getName());

@@ -1,9 +1,5 @@
 name: RPGWorld
 author: Sedara
 version: 1.0
-main: rpgworld.Main
+main: rpgworld.RPGWorldPlugin
 commands:
-  experience:
-    decription: gives experience
-  level:
-    description: set level

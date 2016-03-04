@@ -2,7 +2,7 @@ package rpgworld.management;
 
 import org.bukkit.configuration.file.FileConfiguration;
 
-import rpgworld.Main;
+import rpgworld.RPGWorldPlugin;
 
 public class ConfigManager {
 	
@@ -11,7 +11,7 @@ public class ConfigManager {
 	private static final ConfigManager INSTANCE = new ConfigManager();
 	
 	private ConfigManager(){
-		config = Main.getPlugin(Main.class).getConfig();
+		config = RPGWorldPlugin.getPlugin(RPGWorldPlugin.class).getConfig();
 		saveDefault();
 	}
 	
@@ -40,7 +40,7 @@ public class ConfigManager {
 //	}
 //	
 	private void saveDefault(){
-		Main.getPlugin(Main.class).saveDefaultConfig();
+		RPGWorldPlugin.getPlugin(RPGWorldPlugin.class).saveDefaultConfig();
 	}
 	
 //	private void save(){

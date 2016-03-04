@@ -77,6 +77,12 @@ public class RPGPlayer {
 	public int getLevel() {
 		return level;
 	}
+
+	@Override
+	public String toString() {
+		return "RPGPlayer [name=" + name + ", xp=" + xp + ", rpgClass=" + rpgClass + ", skin=" + skin + ", level="
+				+ level + ", guild=" + guild + "]";
+	}
 	
 	
 	
