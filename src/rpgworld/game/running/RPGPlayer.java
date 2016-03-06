@@ -2,6 +2,7 @@ package rpgworld.game.running;
 
 
 import rpgworld.game.classes.RPGClass;
+import rpgworld.management.ExistingGuilds;
 
 public class RPGPlayer {
 	
@@ -24,6 +25,13 @@ public class RPGPlayer {
 	
 	public RPGPlayer(String name) {
 		this(name, 1, 0, null, null, "");
+	}
+	
+	public boolean joinGuild(String guildName){
+		try{
+		if(!guild.equalsIgnoreCase("")) return false;
+		}catch(NullPointerException e){return false;}
+		return ExistingGuilds.getInstance().getGuild(guildName).addMember(name);
 	}
 
 	public String getGuild() {

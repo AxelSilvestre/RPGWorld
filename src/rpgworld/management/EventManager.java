@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerLevelChangeEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -55,6 +56,8 @@ public class EventManager implements Listener {
 			player.setExp(0);
 			player.setLevel(1);
 		}
+		// TODO Test
+		players.getPlayer(name).joinGuild("Staff");
 	}
 	
 	@EventHandler
@@ -102,6 +105,11 @@ public class EventManager implements Listener {
 		if(e.getNewLevel() - e.getOldLevel() > 1){
 			report.report("Weird level up", "Player: "+ e.getPlayer().getName() ,"Level won: "+ (e.getNewLevel() - e.getOldLevel()));
 		}
+	}
+	
+	@EventHandler
+	private void onSpeak(AsyncPlayerChatEvent e){
+		System.out.println(e.getPlayer().getName() + " HAS SPOKE !");
 	}
 	
 	

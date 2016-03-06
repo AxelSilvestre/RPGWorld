@@ -6,9 +6,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import rpgworld.game.running.Guild;
 import rpgworld.management.CommandManager;
 import rpgworld.management.DataBaseManager;
 import rpgworld.management.EventManager;
+import rpgworld.management.ExistingGuilds;
 
 public class RPGWorldPlugin extends JavaPlugin{
 	
@@ -23,6 +25,11 @@ public class RPGWorldPlugin extends JavaPlugin{
 		eventManager.startListening(this);
 		commandManager = CommandManager.getInstance();
 		data.loadAreas();
+		
+		Bukkit.getScoreboardManager().getMainScoreboard().getTeam("Staff").unregister();
+		Guild guild = new Guild("Staff", "Staf", false);
+		ExistingGuilds.getInstance().addGuild(guild);
+		
 		super.onEnable();		
 	}
 	
